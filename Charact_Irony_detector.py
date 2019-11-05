@@ -7,6 +7,7 @@ import nltk
 import string
 import collections
 from nltk.corpus import stopwords
+from collections import Counter
 nltk.download('punkt')
 from nltk.stem import SnowballStemmer
 from matplotlib import pyplot
@@ -22,9 +23,9 @@ from keras.layers.pooling import GlobalMaxPool1D, MaxPool1D
 from keras import Sequential
 from keras.regularizers import l1
 from keras.preprocessing.sequence import pad_sequences
+from keras.preprocessing.text import Tokenizer
 from keras.utils import np_utils
 from sklearn.model_selection import train_test_split
-from keras import optimizers
 import collections
 import matplotlib.pyplot as plt
 import numpy as np
@@ -40,11 +41,14 @@ exclude = set(string.punctuation)
 WORD2VECMODEL = "/Users/frandm/Documents/Tesis/Code/SBW-vectors-300-min5.bin.gz"
 VOCAB_SIZE = 5000
 EMBED_SIZE = 300
-NUM_FILTERS = 8
-NUM_WORDS = 6
-BATCH_SIZE = 64
-NUM_EPOCHS = 100
-HIDDEN_LAYER_SIZE = 32
+NUM_FILTERS = 64
+NUM_CHAR = 6
+BATCH_SIZE = 128
+NUM_EPOCHS = 20
+HIDDEN_LAYER_SIZE = 256
+THRESHOLD = 15
+
+stop_words = set(stopwords.words('spanish'))
 
 def dblite_connect(dbname):
 
@@ -61,8 +65,7 @@ def csvwrite(csvname,input): #problemas con caracteres en espanio como tildes
     return
 
 def change_URL(sample):
-    #return re.sub(r"http\S+", "http://URL", sample)
-    return re.sub(r"http\S+", "aquivaunlink", sample)
+    return re.sub(r"http\S+", "aquivaunaURL", sample)
 
 
 def change_mentions(sample):
@@ -74,6 +77,9 @@ def remove_whitespaces(sample):
 def change_numbers(sample):
     return ''.join([i for i in sample if not i.isdigit()])
 
+def remove_stopwords(sample):
+    return ''.join([w for w in sample if not w in stop_words])
+
 def remove_punctuations(sample):
     return ''.join(i for i in sample if i not in exclude)
 
@@ -84,15 +90,14 @@ def remove_hashtags(sample):
     sample = sample.replace("#ironía", "")
     sample = sample.replace("#", "")
     return sample
-def load_word2vec(vocab_sz):
-    word2vec = KeyedVectors.load_word2vec_format(WORD2VECMODEL, binary=True)
-    embedding_weights = np.zeros((vocab_sz, EMBED_SIZE))
-    for word, index in word2index.items():
-        try:
-            embedding_weights[index, :] = word2vec[word]
-        except KeyError:
-            pass
-    return embedding_weights
+def stemmer(sample):
+    token_words =  [x for x in nltk.word_tokenize(sample)]
+    token_words
+    stem_sentence = []
+    for word in token_words:
+        stem_sentence.append(spanishStemmer.stem(word))
+        stem_sentence.append(" ")
+    return "".join(stem_sentence)
 
 def filter_spanish_only(df):
     spanish_list=list()
@@ -106,18 +111,8 @@ def filter_spanish_only(df):
             non_spanish_list.append(text)
     return spanish_list,non_spanish_list
 
-
-def stemmer(sample):
-    token_words =  [x for x in nltk.word_tokenize(sample)]
-    token_words
-    stem_sentence = []
-    for word in token_words:
-        stem_sentence.append(spanishStemmer.stem(word))
-        stem_sentence.append(" ")
-    return "".join(stem_sentence)
-
 pd.set_option('display.max_colwidth', -1)
-stop_words = set(stopwords.words('spanish'))
+
 #data load from baseline
 c,conn = dblite_connect("/Users/frandm/Documents/Tesis/dataset/Tesis_NLP.sqlite")
 df = pd.read_sql_query("SELECT *, 0 as is_ironic FROM baseline_mx_nonironictweets",conn)
@@ -174,93 +169,97 @@ df['tweets_txt']=df.apply(lambda x: remove_hashtags(x['tweets_txt']),axis=1)
 
 df['tweets_txt']=df.apply(lambda x: change_numbers(x['tweets_txt']),axis=1)
 print(df)
-
 #df['tweets_txt']=df.apply(lambda x: remove_punctuations(x['tweets_txt']),axis=1)
-
 print(df)
 df['tweets_txt']=df.apply(lambda x: remove_whitespaces(x['tweets_txt']),axis=1)
 print(df)
-#stopwords?
+#df['tweets_txt']=df.apply(lambda x: remove_stopwords(x['tweets_txt']),axis=1)
 #df['tweets_txt']=df.apply(lambda x: stemmer(x['tweets_txt']),axis=1)
+print(df)
+#stopwords?
+
 #embeddings
 counter = collections.Counter()
 maxlen=0
 
-contawords=0
-contachars=0
-for index, row in df.iterrows():
-    text=row['tweets_txt']
-    contawords += len(text.split())
-    contachars += len(text)
-    words = [x for x in nltk.word_tokenize(text)] #extract each work in the string
+print(df['tweets_txt'].apply(lambda x: len(x)).describe())
 
-    #words = [w for w in words if not w in stop_words]
-    if len(words) >  maxlen:
-        maxlen = len(words)
-        contawords+=len(words)
-    for word in words:
+unique_symbols = Counter()
 
-        counter[word] +=1
+for _, message in df['tweets_txt'].iteritems():
+    unique_symbols.update(message)
 
-print(contachars / contawords) #average long to be use in charcter embedding
-print(contawords / len(df.index)) #average long to be use in charcter embedding
+print("Unique symbols:", len(unique_symbols))
 
-print(counter)
-word2index = collections.defaultdict(int)
-for wid, word in enumerate(counter.most_common(VOCAB_SIZE)):
-    word2index[word[0]]=wid+1
-print(word2index)
-vocab_sz = len(word2index) + 1
-index2word = {v:k for k,v in word2index.items()}
+print("Unique symbols:", unique_symbols)
 
-xs, ys = [], []
-for index, row in df.iterrows():
-    ys.append(int(row['is_ironic']))
-    text = row['tweets_txt']
-    words = [x for x in nltk.word_tokenize(text)]  # extract each word in the string
-    #words = [w for w in words if not w in stop_words]
-    wids = [word2index[word] for word in words]  # extract each work in the string
-    xs.append(wids)
-X = pad_sequences(xs,maxlen=maxlen)
-Y = np_utils.to_categorical(ys)
+uncommon_symbols = list()
 
-print(X)
-print(Y)
+for symbol, count in unique_symbols.items():
+    if count < THRESHOLD:
+        uncommon_symbols.append(symbol)
+
+print("Uncommon symbols:", len(uncommon_symbols))
+print("Uncommon symbols:", uncommon_symbols)
+
+
+
+
+DUMMY = uncommon_symbols[0]
+tr_table = str.maketrans("".join(uncommon_symbols), DUMMY * len(uncommon_symbols))
+
+df['tweets_txt'] = df['tweets_txt'].apply(lambda x: x.translate(tr_table))
+
+
+# We will need the number of unique symbols further down when we will decide on the dimensionality of inputs.
+
+num_unique_symbols = len(unique_symbols) - len(uncommon_symbols) + 1
+
+tokenizer = Tokenizer(
+    char_level=True,
+    filters=None,
+    lower=False,
+    num_words=num_unique_symbols
+)
+
+print(df)
+
+
+tokenizer.fit_on_texts(df['tweets_txt'])
+sequences = tokenizer.texts_to_sequences(df['tweets_txt'])
+X = pad_sequences(sequences,maxlen=289)
+Y = np_utils.to_categorical(df['is_ironic'])
+
+print(sequences[0])
+print(X[0])
+print(Y[0])
+
 
 Xtrain, Xtest, Ytrain, Ytest = train_test_split(X, Y, test_size=0.2,random_state=101)
 
 
 #load word2vec model
-embedding_weights = load_word2vec(vocab_sz)
+#embedding_weights = load_word2vec(vocab_sz)
 #embedding_weights=1
 model = Sequential()
 
 #if embedding_weights:
-model.add(Embedding(vocab_sz, EMBED_SIZE, input_length=maxlen, weights=[embedding_weights]))
+#model.add(Embedding(vocab_sz, EMBED_SIZE, input_length=maxlen, weights=[embedding_weights]))
 #else:
-#model.add(Embedding(vocab_sz,EMBED_SIZE,input_length=maxlen))
+model.add(Embedding(num_unique_symbols,EMBED_SIZE,input_length=289))
 
-model.add(SpatialDropout1D(0.2))
-model.add(Conv1D(filters=NUM_FILTERS,kernel_size=NUM_WORDS, activation="relu"))
-model.add(Conv1D(filters=NUM_FILTERS,kernel_size=NUM_WORDS,activation="relu"))
-model.add(Dropout(0.2))
-model.add(LSTM(HIDDEN_LAYER_SIZE,dropout=0.3,recurrent_dropout=0.3,return_sequences=True))
-model.add(LSTM(HIDDEN_LAYER_SIZE,dropout=0.3,recurrent_dropout=0.3))
-model.add(Dense(8, activation="sigmoid"))
+model.add(SpatialDropout1D(0.1))
+model.add(Conv1D(filters=NUM_FILTERS,kernel_size=NUM_CHAR, activation="relu"))
+model.add(Conv1D(filters=NUM_FILTERS,kernel_size=NUM_CHAR,activation="relu"))
+model.add(LSTM(HIDDEN_LAYER_SIZE,dropout=0.1,recurrent_dropout=0.1,return_sequences=True))
+model.add(LSTM(HIDDEN_LAYER_SIZE,dropout=0.1,recurrent_dropout=0.1))
+model.add(Dense(128, activation="sigmoid"))
 model.add(Dense(2, activation="sigmoid"))
-
-#sgd = optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.1, nesterov=True)
 model.compile(loss="categorical_crossentropy",optimizer="adam",metrics=["accuracy"])
-
-
-
-# model.compile(loss="categorical_crossentropy",optimizer=sgd,metrics=["accuracy"])
-
-
 # checkpoint
-filepath="/Users/frandm/Documents/Tesis/weights/words/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
+filepath="/Users/frandm/Documents/Tesis/weights/weights-improvement-{epoch:02d}-{val_acc:.2f}.hdf5"
 ch = ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-es = EarlyStopping(monitor='val_acc', mode='max', verbose=1, patience=10)
+es = EarlyStopping(monitor='val_acc', mode='max', verbose=1, patience=20)#from 4
 
 
 history=model.fit(Xtrain,Ytrain,batch_size=BATCH_SIZE, callbacks=[es,ch], epochs= NUM_EPOCHS, validation_data=(Xtest,Ytest))
@@ -287,14 +286,12 @@ print (cm)
 print('Sensitivity Score:{}'.format(sensitivity))
 print('Specificity Score:{}'.format(specificity))
 
-print('Observations: {}'.format(len(ys)))
-print('Ironic share: {}:'.format(ys.count(1)))
-
+print('Observations: {}'.format(len(df)))
+print('Ironic share: {}:'.format(df.groupby('is_ironic').count()))
 pyplot.plot(history.history['acc'],label='train')
 pyplot.plot(history.history['val_acc'],label='test')
 pyplot.legend()
 pyplot.show()
-
 
 
 
