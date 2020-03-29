@@ -1,0 +1,2918 @@
+/Users/frandm/anaconda3/envs/untitled/bin/python /Users/frandm/PycharmProjects/tesis/char_detect_rsearch.py
+[nltk_data] Downloading package punkt to /Users/frandm/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Using TensorFlow backend.
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+                                                                                                                                                                                                                                                                           tweets_txt  \
+0     ¡increíble pero cierto! si hoy es tu segundo día de trabajo procura no quedarte dormido como este hombre $%&                                                                                                                                                                      
+1     pgr asegura las cuentas bancarias de enrique peña nieto y angélica rivera $%& diadelosinocentes $%&                                                                                                                                                                               
+2     castro pone sus condiciones a obama: “las tortas cubanas y los chiles habaneros son piratas” $%& $%&                                                                                                                                                                              
+3     iglesias y rivera: debate entre luchar contra la desigualdad y gestionar la economía $%&                                                                                                                                                                                          
+4     @ en cuanto a humor tenéis la mayoría absoluta.                                                                                                                                                                                                                                   
+5     tal día como hoy nació el barón de münchhausen. lo celebramos bajando el precio de las entradas de nuestro show: $%&                                                                                                                                                              
+6     zapatero interrumpe el suministro de herencia: $%&                                                                                                                                                                                                                                
+7     will smith llama a un uber y al mirarlo nota que decía "fresco": admite no saber por qué $%&                                                                                                                                                                                      
+8     @ tomamos nota                                                                                                                                                                                                                                                                    
+9      chistes sobre el % candidatos a portada de esta semana: $%&                                                                                                                                                                                                                      
+10    en minutos entrevistamos a @ en @ mítico. es por aquí: $%& ohmylolsoneg $%&                                                                                                                                                                                                       
+11    corto de mierda gana un premio de mierda: $%&                                                                                                                                                                                                                                     
+12    cartón: posibles escapes del chapo en unos días $%&                                                                                                                                                                                                                               
+13    policía de tránsito le pide mordida a otro policía por traer terminación $%&                                                                                                                                                                                                      
+14    en marzo arranca la versión en manga de chanoc $%& $%&                                                                                                                                                                                                                            
+15    george washington prepara mudanza al billete de pesos $%&                                                                                                                                                                                                                         
+16    buenoessaberlo la revista no sólo está disponible en papel, también en digital. aquí: $%& $%&                                                                                                                                                                                     
+17    video: anahí acompañada de su mujer recibe al papa $%&                                                                                                                                                                                                                            
+18    ¡tipos de unionistas catalanes! $%& por joan ferrús &amp; @ $%&                                                                                                                                                                                                                   
+19    el plan económico que negocian la cup y mas alarma al empresariado $%&                                                                                                                                                                                                            
+20    la asociación de circuncidados no puede asumir más recortes: $%&                                                                                                                                                                                                                  
+21    ¡increíble pero cierto! los dibujos más inocentemente inapropiados que han hecho los niños $%&                                                                                                                                                                                    
+22    un empresario chino compra la guardia civil: $%& $%&                                                                                                                                                                                                                              
+23    andrea legarreta, ninel conde y epn representarán a méxico en el foro económico mundial de este año $%&                                                                                                                                                                           
+24    tus películas favoritas si fueran películas para adultos $%& $%&                                                                                                                                                                                                                  
+25    ¡increíble pero cierto! payaso es golpeado brutalmente solo porque un niño no ganó en un juego $%&                                                                                                                                                                                
+26    google revela las frases más buscadas en viernes por la noche (en méxico) $%&                                                                                                                                                                                                     
+27    joven mexicano sale del clóset y confiesa que es "gamer" $%&                                                                                                                                                                                                                      
+28    recordad que hoy a las dos serán los cuartos.                                                                                                                                                                                                                                     
+29    video: aficionados le gritan "borracho" a giovani dos santos y así reacciona el borracho $%&                                                                                                                                                                                      
+...                                                                                            ...                                                                                                                                                                                      
+4026  me gusta mucho que los maestros no se tengan que re-evaluar porque ya están formados... casi igual de justo que yo recertificandome cada años...                                                                                                                                  
+4027  😂 ellos quemaron la contraloria! gracias no sabía! creí que era correa! gracias nuevamente! 👍🏽 $%&                                                                                                                                                                                
+4028  ¿quieres ser monja?cómprate un megáfono...                                                                                                                                                                                                                                        
+4029  rt @ me encanta cuando mis amigos hacen planes y no cuentan conmigo. es una sensación tan gratificante.                                                                                                                                                                           
+4030  rt @ @ así es! yo por eso ya perdoné a ortega y voy a darle otra oportunidad en las próximas elecciones. confío en su b…                                                                                                                                                          
+4031  septiembre debe ser mes récord en esta red en la creación de cuentas 🤦🏽‍♀️sícómono                                                                                                                                                                                                
+4032  estaba tratando de recordar lo que he olvidado. te alegrará saber que no pensaba en ti, estaba algo ocupado des forrando el pasado, desandando los caminos que me trajeron aquí...                                                                                                
+4033  $%&cabalef dimaio salvini giuseppeconte satira satirapolitica comics follow lega ms msnograzie littizzetto contebis openarms iostoconsalvini portichiusi fateliscendere renzi pd zingaretti mentana ilfoglio repubblica                                                           
+4034  rt @ parece que bolsonaro é um estrategista nato, não é mesmo? $%&                                                                                                                                                                                                                
+4035  voy a escribir en mi libreta: soy médico cirujano, a ver si un juez lo toma en cuenta.                                                                                                                                                                                            
+4036  rt @ @ 🤔en el campo de la informática usted es, sin discusión, una autoridad en esa materia...pero ahora ¡callad insensato!…                                                                                                                                                      
+4037  onde já se viu um time dominar o futebol do seu estado dessa maneira? não existe futebol sem seus rivais locais. acho que a cbf deveria aplicar um fair play o quanto antes! $%&                                                                                                  
+4038  rt @ lo complicado del cambio de televisora, de aquellos que a nadie le importan, es el montón de británicos que ya habían adqu…                                                                                                                                                  
+4039  yo: mira, un control. hay guardias aqui. papa, aqui tienen su propio cuerpo????mi padre: no, no tienen. esto es españa. no cataluña o el pais vasco.jajajajjajajajajajjajajajaja humornoofensa                                                                                    
+4040  rt @ @ @ @ @ @ @ otro golpe para la campaña de quie…                                                                                                                                                                                                                              
+4041  cómo cuando una persona ciega aconseja a una persona que ve, sobre cómo encontrar un objeto perdido.                                                                                                                                                                              
+4042  ya superan a populares portales como @ pedrosanchez eleccionesnoviembre amor parenlasrotativas humor sátira$%&                                                                                                                                                                    
+4043  que divertida está la casa ghvips                                                                                                                                                                                                                                                 
+4044  @ @ @ que gran trabajo 👏🏼👏🏼👏🏼👏🏼                                                                                                                                                                                                                                                   
+4045  aqui, viendo por la tv como los pacifistas se manifiestan en barcelona tirando petalos de rosas a cara descubierta...                                                                                                                                                             
+4046  es culpa de petro $%&                                                                                                                                                                                                                                                             
+4047  @ @ la estupidez raya con la razón sus carros policiales si se pueden estacionar ahí que ridiculez así como para sus conductores de patrullas no se les exige el cinturón..... lo mismo sus motorizados hay van en medio de la calle haciendo tercer carril jajajajajajajajaja    
+4048   e são a comédia da menteinteligente. $%&                                                                                                                                                                                                                                         
+4049  rt @ al menos las siguientes temporadas del chapo van a estar buenas no?                                                                                                                                                                                                          
+4050   si @ puede ser candidato a presidente, porque una chilena, como @ no puede ser presidenta del senado @ @ @ @ @ @ @ @ @                                                                                                                                                           
+4051  rt @ igual opino de los colombianos que viven en 🇺🇸 y apoyan el “proceso de paz”. espero que si los guerrilleros, comunistas y mafio…                                                                                                                                             
+4052  @ też uważam, że rząd powinien dążyć do tego, by większość polaków zarabiała powyżej średniej krajowej! żart                                                                                                                                                                      
+4053  lo de los comerciales de las farmacéuticas colándose y retrasando las consultas en el hospital es maravilloso                                                                                                                                                                     
+4054  te entiendo, muchos no, lindo $%&                                                                                                                                                                                                                                                 
+4055  rt @ el hombre tiene su parte de razón...zaragoza policialocal aragonenlared alcoholemia sirenas policía humor …                                                                                                                                                                  
+
+      is_ironic  
+0     1          
+1     1          
+2     1          
+3     1          
+4     1          
+5     1          
+6     1          
+7     1          
+8     1          
+9     1          
+10    1          
+11    1          
+12    1          
+13    1          
+14    1          
+15    1          
+16    1          
+17    1          
+18    1          
+19    1          
+20    1          
+21    1          
+22    1          
+23    1          
+24    1          
+25    1          
+26    1          
+27    1          
+28    1          
+29    1          
+...  ..          
+4026  1          
+4027  1          
+4028  1          
+4029  1          
+4030  1          
+4031  1          
+4032  1          
+4033  1          
+4034  1          
+4035  1          
+4036  1          
+4037  1          
+4038  1          
+4039  1          
+4040  1          
+4041  1          
+4042  1          
+4043  1          
+4044  1          
+4045  1          
+4046  1          
+4047  1          
+4048  1          
+4049  1          
+4050  1          
+4051  1          
+4052  1          
+4053  1          
+4054  1          
+4055  1          
+
+[4056 rows x 2 columns]
+count    20297.000000
+mean     90.368527   
+std      46.090198   
+min      0.000000    
+25%      61.000000   
+50%      84.000000   
+75%      109.000000  
+max      283.000000  
+Name: tweets_txt, dtype: float64
+Unique symbols: 744
+Unique symbols: Counter({' ': 301144, 'e': 182018, 'a': 173330, 'o': 124737, 's': 102183, 'n': 94019, 'r': 93102, 'i': 88891, 'l': 74437, 't': 65006, 'd': 64526, 'c': 58374, 'u': 54796, 'm': 45593, 'p': 39850, 'g': 18188, 'b': 18144, 'v': 17771, '%': 15762, '&': 15722, '$': 15652, 'h': 14849, '.': 14569, 'q': 13692, 'f': 13146, 'y': 13053, '@': 10086, 'j': 9581, ',': 8393, 'z': 7577, 'í': 6536, 'á': 6423, 'ó': 6054, 'é': 4130, '!': 3792, 'ñ': 3297, ':': 3197, 'x': 3168, '"': 3016, '?': 2601, 'k': 2170, 'w': 1624, 'ú': 1400, '¿': 1062, '…': 997, '¡': 912, '-': 872, "'": 784, '(': 705, '“': 655, ')': 645, '😂': 634, '”': 627, ';': 599, '️': 495, '🤣': 345, 'ã': 324, '😍': 218, '\u200d': 216, '«': 205, '»': 201, '🏻': 201, '❤': 173, '|': 170, '/': 154, '👏': 150, '’': 134, 'ç': 128, '🏼': 128, '*': 126, '♥': 115, '🙄': 107, '🤔': 99, '♀': 99, 'ä': 98, '—': 95, 'à': 92, '🤦': 92, '😘': 90, '😊': 89, '👇': 88, '♂': 88, '_': 83, '💪': 76, '💕': 76, 'è': 73, '🙏': 71, 'ê': 71, '😉': 69, '😒': 68, '‘': 64, '[': 63, '•': 63, '🎶': 62, '💚': 62, '😭': 60, '😁': 60, '😎': 57, 'ü': 56, '👌': 56, '💋': 53, '👍': 52, '\U0001f970': 52, '😏': 50, '🙌': 48, '⚽': 47, '\U0001f92a': 47, 'ł': 47, '🙈': 46, '😱': 45, '😅': 45, '😃': 44, '~': 44, 'ę': 42, 'ż': 42, '+': 41, ']': 41, '🤗': 38, '✌': 36, '✨': 36, '💙': 36, '🤷': 35, '💃': 35, 'ć': 35, '😜': 34, '😡': 34, '\U0001f929': 34, '🏽': 34, '👉': 32, '☀': 31, '\U0001f92d': 31, 'ą': 31, '💖': 30, '😄': 30, '☺': 27, '😋': 26, '➡': 26, '💜': 26, '💥': 26, '🌞': 26, 'º': 25, '=': 25, 'ś': 25, '😚': 25, '💨': 25, '👎': 25, '😝': 23, '😆': 23, '♪': 23, '📰': 22, '😔': 22, '🎉': 22, '🦋': 22, '€': 21, '👊': 21, '🔝': 20, '😢': 20, '🏃': 20, '😈': 20, '😌': 19, '😩': 19, 'ò': 19, '➖': 19, 'ô': 18, '💞': 18, '🇷': 18, '\U0001f973': 18, '⭐': 18, '😀': 17, '😇': 17, '´': 16, '📷': 16, '🖤': 16, '🥂': 16, '😑': 16, '🙂': 16, '🎵': 16, '\U0001f974': 16, '🎥': 15, '°': 15, '🇦': 15, '🌸': 15, '👑': 15, '🌺': 15, '🐶': 15, '・': 15, '🙋': 15, '😥': 15, 'ù': 15, 'õ': 15, 'ö': 14, '🎂': 14, '💛': 14, '😳': 14, '🙊': 14, '🔥': 14, '·': 14, '📸': 13, '👦': 13, '🇨': 13, '🎊': 13, '👩': 13, '😴': 13, '😠': 13, '💗': 13, '☁': 13, '–': 13, '☕': 12, '‼': 12, '💁': 12, '🌎': 12, '🎁': 12, '👈': 12, '🌟': 12, '💩': 12, '💦': 12, '\u2066': 12, '💫': 12, '🤐': 12, '📺': 11, '🔫': 11, '💐': 11, '✋': 11, 'ì': 11, '🎧': 11, '🇧': 11, '🔴': 11, '🃏': 11, '🐎': 11, '🇪': 10, '👨': 10, '😐': 10, '^': 10, '🌈': 10, '🕺': 10, 'ª': 9, '″': 9, '💸': 9, '☔': 9, '🌷': 9, '😻': 9, '💯': 9, '👻': 9, '🌍': 9, '🙉': 9, '😣': 9, '😓': 9, '♡': 9, '😞': 9, '🏾': 9, '🇲': 9, '🇽': 9, '😬': 9, '⬇': 9, '𝔢': 8, '🐕': 8, '🍾': 8, '👧': 8, '🤡': 8, '🤑': 8, 'â': 8, '😰': 8, '🏀': 7, '❗': 7, '⚘': 7, '🌹': 7, '📞': 7, '💓': 7, '😪': 7, '💘': 7, '🙃': 7, '💝': 7, '😖': 7, '📚': 7, '😕': 7, '🍃': 7, '🍺': 7, '💆': 7, '\U0001f928': 7, '📱': 6, '𝔞': 6, '🌻': 6, '🇺': 6, '📌': 6, '\U0001f97a': 6, '🎃': 6, '✔': 6, '🇿': 6, '͡': 6, '🐾': 6, '😤': 6, '📲': 6, '🤓': 6, '🐍': 6, '🇸': 6, '™': 5, '▶': 5, '}': 5, '⚠': 5, '🏈': 5, '💀': 5, '💡': 5, '🍀': 5, '🇻': 5, '🍎': 5, '🎈': 5, '🎓': 5, '🇱': 5, '🚂': 5, '👹': 5, '\U0001f9da': 5, '😹': 5, '🍁': 5, '😛': 5, '🏆': 5, '♫': 5, '📖': 5, '💔': 5, '🎤': 5, '👸': 5, '✅': 5, '🏋': 5, '\U0001f9e0': 5, '👋': 5, '✊': 5, '🎙': 5, '😷': 5, '🐒': 5, '🇴': 5, '🦁': 5, '🚲': 5, '♦': 5, '💅': 5, '🤤': 5, '{': 4, '🤝': 4, '👀': 4, '𝔯': 4, '𝔲': 4, '𝔩': 4, '𝔫': 4, '✍': 4, '❓': 4, 'е': 4, 'с': 4, 'и': 4, '\U0001f9d8': 4, '🌱': 4, '☹': 4, '⇩': 4, '¬': 4, '🎬': 4, '🌚': 4, '😲': 4, '\U0001f9e1': 4, '💏': 4, '👯': 4, '😧': 4, 'ל': 4, '💭': 4, '💟': 4, '🇮': 4, '🇹': 4, '🐘': 4, '⚡': 4, '👆': 4, '\U000fe334': 4, '\\': 4, '🇵': 4, '🔹': 4, '🍷': 4, '🅛': 4, '\u2063': 4, '\U0001f92c': 4, '🐦': 4, '☝': 4, 'ń': 4, '😶': 4, '\U0001f92b': 4, '📕': 4, '🤖': 4, '\U000fe354': 4, '🍝': 3, '🎾': 3, '⚾': 3, '👫': 3, '𝔦': 3, '🌧': 3, '🌼': 3, 'а': 3, 'т': 3, 'о': 3, 'м': 3, '🎀': 3, '🏫': 3, '💄': 3, '👠': 3, '💑': 3, '💻': 3, '🔞': 3, '📟': 3, '🔮': 3, '🤰': 3, '🎨': 3, '͜': 3, 'ʖ': 3, '🍭': 3, '👮': 3, '🙅': 3, '👿': 3, '😫': 3, '🤠': 3, '🏡': 3, '💧': 3, '💳': 3, '⚕': 3, '🍻': 3, '📻': 3, '👣': 3, '\U0001f92f': 3, '⠀': 3, '😨': 3, '🏁': 3, '♾': 3, '\U0001f993': 3, '📣': 3, '🅐': 3, '🅔': 3, '🚬': 3, '\U000fe327': 3, '♬': 3, '💰': 3, '\U0001f9d0': 3, '🥚': 3, '🍨': 3, 'ź': 3, '💊': 3, '🤢': 3, '🚴': 3, '》': 3, 'ë': 2, '🍲': 2, '🤙': 2, '🤘': 2, '𝔠': 2, '𝔡': 2, '𝔮': 2, '𝔣': 2, '𝔬': 2, 'н': 2, 'в': 2, 'б': 2, '✴': 2, '👄': 2, '🐈': 2, '\U0001f931': 2, 'ï': 2, '𝘀': 2, '📍': 2, '⚔': 2, '√': 2, '★': 2, '🐸': 2, '🌴': 2, 'ʘ': 2, '😿': 2, '😯': 2, '🙇': 2, '✈': 2, '🕉': 2, 'י': 2, 'ה': 2, 'ט': 2, 'ו': 2, 'ב': 2, '🍂': 2, '🐂': 2, '🎇': 2, '🚗': 2, '⭕': 2, '🐷': 2, '⌚': 2, '🇭': 2, '🇳': 2, '🌏': 2, '☎': 2, '💣': 2, '⃣': 2, '\U0001f9f5': 2, '👼': 2, '🥗': 2, '🍏': 2, '⬆': 2, '¯': 2, '🎞': 2, '🇩': 2, '📝': 2, '🇬': 2, '🍊': 2, 'œ': 2, '📅': 2, '🏛': 2, '⚪': 2, '⚒': 2, '🗣': 2, '🏗': 2, '🎼': 2, '💌': 2, '🌳': 2, '🏐': 2, '🔅': 2, '🅘': 2, '🤛': 2, '🤜': 2, '©': 2, '🌊': 2, '`': 2, '▬': 2, '❣': 2, '👶': 2, '🌠': 2, '🇾': 2, '🚌': 2, '🖐': 2, '👺': 2, '💉': 2, '📽': 2, '🛫': 2, '🇯': 2, '🤞': 2, '🖕': 2, '🙁': 2, '⚫': 2, '♠': 2, '😵': 2, '₡': 2, '🚨': 2, '¨': 2, '👟': 2, '🏢': 2, '▸': 1, 'ý': 1, '🍴': 1, '⛅': 1, '🔙': 1, '↪': 1, '𝔜': 1, '𝔥': 1, '𝔶': 1, '𝔰': 1, '𝔷': 1, '𝔱': 1, '𝔪': 1, 'г': 1, 'д': 1, 'ж': 1, 'р': 1, 'л': 1, 'ь': 1, 'я': 1, '\U0001f9b1': 1, '👗': 1, '🐼': 1, '𝗴': 1, '𝘂': 1, '𝗲': 1, '𝗻': 1, '𝗼': 1, '🍸': 1, '🎗': 1, '😙': 1, '🍬': 1, '🚳': 1, '\U0001f9d3': 1, '🙆': 1, '✖': 1, '🗿': 1, '👽': 1, '🐧': 1, '🚫': 1, '🏖': 1, '🌑': 1, '☮': 1, '🏝': 1, '🚚': 1, '\U0001f99a': 1, '🎹': 1, '🚙': 1, '🏍': 1, '😮': 1, '🎚': 1, '🐺': 1, '❕': 1, '\U0001f9d9': 1, '🤚': 1, '🍧': 1, '🌂': 1, '❌': 1, '🥁': 1, '🕯': 1, '🕊': 1, '💍': 1, '🏳': 1, '🐽': 1, '🐖': 1, '🌿': 1, '☆': 1, '🐮': 1, '📦': 1, '💇': 1, '🎺': 1, '✂': 1, '🥇': 1, '\U000feb5e': 1, '\U000fe4d6': 1, '\U000fe196': 1, '\U0001f964': 1, '🍐': 1, '🍓': 1, '🛀': 1, '🐐': 1, '👂': 1, '\U0001f91f': 1, 'ツ': 1, '🙍': 1, '👁': 1, '👐': 1, '📹': 1, '📠': 1, '🚀': 1, '🐳': 1, '📢': 1, '⏩': 1, '👙': 1, '🍑': 1, '⁉': 1, '🅥': 1, '🅓': 1, '🅢': 1, '🅑': 1, '🇫': 1, '🎲': 1, '🥋': 1, '🥊': 1, '⛸': 1, '🏉': 1, '†': 1, '🌬': 1, '👷': 1, '\U000feb9f': 1, '\U000feb9e': 1, '\u2069': 1, '➿': 1, '╝': 1, 'у': 1, 'з': 1, 'й': 1, 'п': 1, 'ℹ': 1, '►': 1, '🅕': 1, '🅩': 1, '🦏': 1, '🍩': 1, '🗞': 1, '👅': 1, '🏹': 1, '📬': 1, '💬': 1, '\U000fe347': 1, '\U000fe1ab': 1, '\U000fe041': 1, '🎢': 1, '🍹': 1, '℅': 1, '🖍': 1, '🥅': 1, '❎': 1, 'ķ': 1, '®': 1, '🎭': 1, '⛄': 1, 'ā': 1, '🔪': 1, '📃': 1, '🕵': 1, '🔁': 1, '諷': 1, '刺': 1, '반': 1, '어': 1, '💢': 1, '🇰': 1, 'š': 1, 'č': 1, 'ť': 1, '\U0001f92e': 1, '🌲': 1, '\U000feb10': 1, '🚵': 1, '🙀': 1, '🍣': 1, '🍢': 1, '대': 1, '한': 1, '항': 1, '공': 1, '점': 1, '보': 1, '스': 1, '─': 1, '𝑓': 1, '𝑒': 1, '𝑙': 1, '𝑖': 1, '́': 1, '𝑧': 1, '👰': 1, '🤵': 1, '🥃': 1, '🗨': 1, '📧': 1, '✏': 1, '🍕': 1, '🍔': 1, '│': 1, '🖼': 1, '🍗': 1, '🌅': 1, '🆙': 1, '🆗': 1, '🆓': 1, '🐴': 1, '\U000fe341': 1, '\U000fec2f': 1, '\U0001f9de': 1, '🤸': 1, '🚦': 1, '↔': 1, '🐔': 1, '¢': 1, '🚇': 1, '👕': 1, '🎸': 1})
+Uncommon symbols: 554
+Uncommon symbols: ['ª', 'ö', '™', '″', '▸', '▶', 'ý', '{', '}', 'ë', '📱', '☕', '🍝', '🍴', '🍲', '⚠', '🏀', '🎾', '🏈', '⚾', '⛅', '💀', '💡', '💸', '📺', '🔙', '🤙', '📸', '👫', '↪', '👦', '‼', '🤝', '💁', '👀', '🤘', '𝔜', '𝔯', '𝔢', '𝔠', '𝔲', '𝔡', '𝔞', '𝔮', '𝔥', '𝔶', '𝔰', '𝔣', '𝔩', '𝔦', '𝔷', '𝔫', '𝔱', '𝔪', '𝔬', '🇪', '🇨', '🍀', '🌻', '🇻', '✍', '🌧', '☔', '🌷', '🌼', '❓', '❗', '🍎', '🇺', '⚘', 'а', 'г', 'е', 'н', 'т', 'с', 'в', 'о', 'д', 'и', 'ж', 'м', 'р', 'б', 'л', 'ь', 'я', '✴', '🔫', '🎂', '🎊', '🎀', '👩', '\U0001f9b1', '💐', '🌎', '🏫', '👨', '🎁', '👄', '💄', '👠', '👗', '\U0001f9d8', '💑', '🐕', '🐈', '🌱', '🍾', '🎈', '💻', '🌹', '📌', '🔞', '📞', '📟', '💛', '🔮', '💓', '\U0001f97a', '☹', '😐', '🤰', '\U0001f931', '👧', '😻', 'ï', '💯', '🐼', '👻', '🎃', '😳', '👈', '𝘀', '𝗴', '𝘂', '𝗲', '𝗻', '𝗼', '✔', '🎓', '😪', '🇱', '🌍', '🍸', '📍', '⚔', '🚂', '🇿', '√', '⇩', '¬', '🎗', '🤡', '🎬', '★', '🙊', '🎨', '🐸', '👹', '🌚', '\U0001f9da', '^', '😲', '🌟', '🌴', '💘', '͡', 'ʘ', '͜', 'ʖ', '🙉', '😿', '😹', '😙', '🍭', '🍬', '\U0001f9e1', '🌈', '🚳', '\U0001f9d3', '😴', '✋', '😯', '🙇', '🙃', '🍁', '💝', '💏', '😣', '😓', '😛', 'ì', '👮', '🙆', '✖', '🕺', '🙅', '🏆', '🗿', '👽', '🐧', '😖', '🚫', '♫', '👯', '💩', '🐾', '🏖', '✈', '📖', '♡', '🌑', '🕉', '☮', '💔', '😧', '🎤', '👿', 'ל', 'י', 'ה', 'ט', 'ו', 'ב', '💭', '🏝', '💟', '🚚', '🍂', '🐂', '🇮', '🇹', '\U0001f99a', '🔥', '🎇', '😞', '😠', '😤', '🚗', '💦', '📚', '👸', '🎹', '🏾', '😫', '🚙', '🤠', '⭕', '🐷', '🏍', '📲', '🏡', '💗', '🐘', '😮', '⌚', '🎧', '🎚', '🇭', '🇳', '💧', '☁', '⚡', '🐺', '❕', '😕', '🍃', '✅', '🌏', '\U0001f9d9', '🤚', '💳', '☎', '🏋', '\U0001f9e0', '💣', '🍧', '🌂', '👋', '⃣', '❌', '⚕', '🇲', '🇽', '🥁', '🕯', '🕊', '🍻', '✊', '🎙', '📻', '😷', '\u2066', '💍', '🏳', '🐽', '🐖', '💫', '🌿', '👆', '☆', '🐒', '👣', '🐮', '📦', '·', '💇', '🎺', '\U0001f9f5', '✂', '🥇', '👼', '\U000feb5e', '\U000fe334', '\U000fe4d6', '\U000fe196', '\U0001f964', '🥗', '🍐', '🍓', '🍏', '🛀', '🐐', '⬆', '👂', '\U0001f92f', '⠀', '\U0001f91f', '😨', '¯', '\\', 'ツ', '–', '🙍', '👁', '👐', '📹', '🎞', '🇩', '🇴', '📠', '📝', '🏁', '🚀', '🤓', '🇵', '♾', '🇬', '🇧', '🐍', '🍊', '🐳', 'œ', '📅', '🏛', '🔴', '⚪', '🦁', '⚒', '🗣', '🏗', '\U0001f993', '🍺', '🎼', '📢', '⏩', '💌', '🚲', '🌳', '🏐', '🔹', '📣', '🔅', '👙', '🍑', '🍷', '⁉', '🅛', '🅐', '🅥', '🅘', '🅓', '🅔', '🅢', '🅑', '🇫', '🤛', '♦', '🤜', '🎲', '🥋', '🥊', '⛸', '🏉', '†', '©', '💅', '💆', '🚬', '🌊', '🌬', '👷', '\U000fe327', '\U000feb9f', '\U000feb9e', '♬', '\u2069', '➿', '`', '▬', '╝', '😬', '🤑', 'у', 'з', 'й', 'п', '\u2063', 'ℹ', '►', '❣', '👶', '🅕', '🅩', '🦏', '🌠', '🍩', '🗞', '🇾', '👅', '🏹', '📬', '💬', '⬇', '\U000fe347', '\U000fe1ab', '\U000fe041', '🇸', '🚌', '🎢', '🍹', '℅', '🃏', '\U0001f92c', '🐦', '🖍', '🤤', '🖐', '☝', '💰', '👺', 'â', 'ń', '🥅', '❎', '\U0001f928', '\U0001f9d0', 'ķ', '®', '🎭', '💉', '📽', '🥚', '🛫', '🍨', '😶', '🇯', '⛄', 'ā', '\U0001f92b', 'ź', '🔪', '📕', '🤖', '📃', '🤞', '🖕', '🙁', '⚫', '💊', '♠', '😵', '🤢', '😰', '₡', '🚨', '🕵', '🔁', '諷', '刺', '반', '어', '💢', '🇰', 'š', 'č', 'ť', '¨', '\U0001f92e', '👟', '🌲', '\U000feb10', '🚴', '🚵', '🙀', '🍣', '🍢', '대', '한', '항', '공', '점', '보', '스', '─', '🏢', '𝑓', '𝑒', '𝑙', '𝑖', '́', '𝑧', '👰', '🤵', '🥃', '🗨', '📧', '✏', '🍕', '🍔', '│', '🖼', '》', '🍗', '🌅', '🆙', '🆗', '🆓', '🐴', '🐎', '\U000fe341', '\U000fe354', '\U000fec2f', '🤐', '\U0001f9de', '🤸', '🚦', '↔', '🐔', '¢', '🚇', '👕', '🎸']
+                                                                                                                                                                                                                                                                           tweets_txt  \
+0     "acuerdo", la nueva viñeta de @ $%&                                                                                                                                                                                                                                               
+1     "buenos días", la nueva viñeta de @ $%&                                                                                                                                                                                                                                           
+2     "condolencias", la nueva viñeta de @ $%&                                                                                                                                                                                                                                          
+3     "dejemos los temas controvertidos. hagamos sólo chistes de gatitos. evitemos la polémica". pues oiga, ni así. $%&                                                                                                                                                                 
+4     "duende" es la nueva viñeta de @ para el mundo today: $%& $%&                                                                                                                                                                                                                     
+5     "el retraso de pedro sánchez se debe a un problema técnico", @ ok.                                                                                                                                                                                                                
+6     "ensañamiento", lo último de @ $%&                                                                                                                                                                                                                                                
+7     "manuela", la nueva viñeta de @ $%&                                                                                                                                                                                                                                               
+8     "paliza", de @ $%&                                                                                                                                                                                                                                                                
+9     "todo calculado", la nueva viñeta de @ $%& $%&                                                                                                                                                                                                                                    
+10    "cdwubcvyewquvberwak esc fewfweqfwvwqrfv", asdawdwef dewfdewifewotsac depasdawdwefdewfdewifewotsac                                                                                                                                                                                
+11    "¿por qué te están llamando todo el rato si es la hora de la comida y estás de vacaciones?" "nada, que pitingo se ha enfadado conmigo".                                                                                                                                           
+12    "¿qué nos está pasando?" la nueva viñeta de @ $%& $%&                                                                                                                                                                                                                             
+13    alerta ¿qué hacer ante una ciclogénesis explosiva? $%&                                                                                                                                                                                                                            
+14    buenoessaberlo el especial no sólo está disponible en papel, también en digital $%& $%&                                                                                                                                                                                           
+15    buenoessaberlo la revista de cada semana no sólo está disponible en papel, también en digital. mira, mira: $%&                                                                                                                                                                    
+16    buenoessaberlo la revista está disponible en papel y también en digital. aquí, mira: $%& $%&                                                                                                                                                                                      
+17    buenoessaberlo la revista no sólo está disponible en papel, también en digital. la tienes aquí a un par de clics: $%&                                                                                                                                                             
+18    esbuenosaberlo la revista no sólo está disponible en papel, también en digital. la tienes aquí a un par de clics: $%&                                                                                                                                                             
+19    esbuenosaberlo la revista no sólo está disponible en papel, también en digital. la tienes aquí: $%&                                                                                                                                                                               
+20    septiembre sabios consejos para superar la vuelta a la rutina: $%& por @ $%&                                                                                                                                                                                                      
+21    dato el jueves que está en los quioscos es el nº. eso significa que la semana que viene... va a pasar algo especial... estad atentos                                                                                                                                              
+22    nombresparafelipevi ya es "trending topic". la lista de propuestas será larga: $%&                                                                                                                                                                                                
+23    radio ahora a las :, @ y jl martín hablarán sobre los números de el jueves en @ $%&                                                                                                                                                                                               
+24    radio nuestra dire @ estará hoy a las : en @ para hablar sobre los núms. de el jueves $%&                                                                                                                                                                                         
+25    recordatorio escríbenos al 'en familia', estamos esperando tu carta. nos tienes aquí: enfamilia@                                                                                                                                                                                  
+26    recuerda tu opinión cuenta. mándanos tus cartas al 'en familia', nos tienes aquí: enfamilia@                                                                                                                                                                                      
+27    - ¿sin plomo o sin plomo ?- hostia, ahora sí que me has pillao. $%&                                                                                                                                                                                                               
+28     botones que facebook debería añadir aparte del «no me gusta» $%& $%&                                                                                                                                                                                                             
+29     botones que facebook debería añadir aparte del «no me gusta»: $%&                                                                                                                                                                                                                
+...                                                                  ...                                                                                                                                                                                                                
+4026  me gusta mucho que los maestros no se tengan que re-evaluar porque ya están formados... casi igual de justo que yo recertificandome cada años...                                                                                                                                  
+4027  😂 ellos quemaron la contraloria! gracias no sabía! creí que era correa! gracias nuevamente! 👍🏽 $%&                                                                                                                                                                                
+4028  ¿quieres ser monja?cómprate un megáfono...                                                                                                                                                                                                                                        
+4029  rt @ me encanta cuando mis amigos hacen planes y no cuentan conmigo. es una sensación tan gratificante.                                                                                                                                                                           
+4030  rt @ @ así es! yo por eso ya perdoné a ortega y voy a darle otra oportunidad en las próximas elecciones. confío en su b…                                                                                                                                                          
+4031  septiembre debe ser mes récord en esta red en la creación de cuentas 🤦🏽‍♀️sícómono                                                                                                                                                                                                
+4032  estaba tratando de recordar lo que he olvidado. te alegrará saber que no pensaba en ti, estaba algo ocupado des forrando el pasado, desandando los caminos que me trajeron aquí...                                                                                                
+4033  $%&cabalef dimaio salvini giuseppeconte satira satirapolitica comics follow lega ms msnograzie littizzetto contebis openarms iostoconsalvini portichiusi fateliscendere renzi pd zingaretti mentana ilfoglio repubblica                                                           
+4034  rt @ parece que bolsonaro é um estrategista nato, não é mesmo? $%&                                                                                                                                                                                                                
+4035  voy a escribir en mi libreta: soy médico cirujano, a ver si un juez lo toma en cuenta.                                                                                                                                                                                            
+4036  rt @ @ 🤔en el campo de la informática usted es, sin discusión, una autoridad en esa materia...pero ahora ¡callad insensato!…                                                                                                                                                      
+4037  onde já se viu um time dominar o futebol do seu estado dessa maneira? não existe futebol sem seus rivais locais. acho que a cbf deveria aplicar um fair play o quanto antes! $%&                                                                                                  
+4038  rt @ lo complicado del cambio de televisora, de aquellos que a nadie le importan, es el montón de británicos que ya habían adqu…                                                                                                                                                  
+4039  yo: mira, un control. hay guardias aqui. papa, aqui tienen su propio cuerpo????mi padre: no, no tienen. esto es españa. no cataluña o el pais vasco.jajajajjajajajajajjajajajaja humornoofensa                                                                                    
+4040  rt @ @ @ @ @ @ @ otro golpe para la campaña de quie…                                                                                                                                                                                                                              
+4041  cómo cuando una persona ciega aconseja a una persona que ve, sobre cómo encontrar un objeto perdido.                                                                                                                                                                              
+4042  ya superan a populares portales como @ pedrosanchez eleccionesnoviembre amor parenlasrotativas humor sátira$%&                                                                                                                                                                    
+4043  que divertida está la casa ghvips                                                                                                                                                                                                                                                 
+4044  @ @ @ que gran trabajo 👏🏼👏🏼👏🏼👏🏼                                                                                                                                                                                                                                                   
+4045  aqui, viendo por la tv como los pacifistas se manifiestan en barcelona tirando petalos de rosas a cara descubierta...                                                                                                                                                             
+4046  es culpa de petro $%&                                                                                                                                                                                                                                                             
+4047  @ @ la estupidez raya con la razón sus carros policiales si se pueden estacionar ahí que ridiculez así como para sus conductores de patrullas no se les exige el cinturón..... lo mismo sus motorizados hay van en medio de la calle haciendo tercer carril jajajajajajajajaja    
+4048   e são a comédia da menteinteligente. $%&                                                                                                                                                                                                                                         
+4049  rt @ al menos las siguientes temporadas del chapo van a estar buenas no?                                                                                                                                                                                                          
+4050   si @ puede ser candidato a presidente, porque una chilena, como @ no puede ser presidenta del senado @ @ @ @ @ @ @ @ @                                                                                                                                                           
+4051  rt @ igual opino de los colombianos que viven en ªª y apoyan el “proceso de paz”. espero que si los guerrilleros, comunistas y mafio…                                                                                                                                             
+4052  @ też uważam, że rząd powinien dążyć do tego, by większość polaków zarabiała powyżej średniej krajowej! żart                                                                                                                                                                      
+4053  lo de los comerciales de las farmacéuticas colándose y retrasando las consultas en el hospital es maravilloso                                                                                                                                                                     
+4054  te entiendo, muchos no, lindo $%&                                                                                                                                                                                                                                                 
+4055  rt @ el hombre tiene su parte de razón...zaragoza policialocal aragonenlared alcoholemia sirenas policía humor …                                                                                                                                                                  
+
+      is_ironic  
+0     1          
+1     1          
+2     1          
+3     1          
+4     1          
+5     1          
+6     1          
+7     1          
+8     1          
+9     1          
+10    1          
+11    1          
+12    1          
+13    1          
+14    1          
+15    1          
+16    1          
+17    1          
+18    1          
+19    1          
+20    1          
+21    1          
+22    1          
+23    1          
+24    1          
+25    1          
+26    1          
+27    1          
+28    1          
+29    1          
+...  ..          
+4026  1          
+4027  1          
+4028  1          
+4029  1          
+4030  1          
+4031  1          
+4032  1          
+4033  1          
+4034  1          
+4035  1          
+4036  1          
+4037  1          
+4038  1          
+4039  1          
+4040  1          
+4041  1          
+4042  1          
+4043  1          
+4044  1          
+4045  1          
+4046  1          
+4047  1          
+4048  1          
+4049  1          
+4050  1          
+4051  1          
+4052  1          
+4053  1          
+4054  1          
+4055  1          
+
+[20297 rows x 2 columns]
+Starting Random Search
+Fitting 2 folds for each of 300 candidates, totalling 600 fits
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128 
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128 
+WARNING: Logging before flag parsing goes to stderr.
+W0102 18:17:59.964336 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64 
+W0102 18:17:59.997483 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING: Logging before flag parsing goes to stderr.
+W0102 18:18:00.003758 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0102 18:18:00.003482 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64 
+W0102 18:18:00.035685 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0102 18:18:00.040283 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0102 18:18:00.040675 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+WARNING: Logging before flag parsing goes to stderr.
+W0102 18:18:00.040856 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+W0102 18:18:00.051521 140736692810688 deprecation.py:506] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0102 18:18:00.067328 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+W0102 18:18:00.067247 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0102 18:18:00.072648 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+WARNING: Logging before flag parsing goes to stderr.
+W0102 18:18:00.074100 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+W0102 18:18:00.078026 140736692810688 deprecation.py:506] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0102 18:18:00.105710 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+W0102 18:18:00.110183 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0102 18:18:00.115138 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0102 18:18:00.116546 140736692810688 deprecation.py:506] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0102 18:18:00.155442 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+W0102 18:18:00.172100 140736692810688 deprecation.py:506] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0102 18:18:01.267921 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+W0102 18:18:01.284704 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+W0102 18:18:01.290341 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3376: The name tf.log is deprecated. Please use tf.math.log instead.
+
+W0102 18:18:01.294600 140736692810688 deprecation.py:323] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0102 18:18:01.306661 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3376: The name tf.log is deprecated. Please use tf.math.log instead.
+
+W0102 18:18:01.310980 140736692810688 deprecation.py:323] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0102 18:18:01.316920 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+W0102 18:18:01.339144 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3376: The name tf.log is deprecated. Please use tf.math.log instead.
+
+W0102 18:18:01.343452 140736692810688 deprecation.py:323] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W0102 18:18:01.361689 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+W0102 18:18:01.383337 140736692810688 deprecation_wrapper.py:119] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py:3376: The name tf.log is deprecated. Please use tf.math.log instead.
+
+W0102 18:18:01.388197 140736692810688 deprecation.py:323] From /Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+Epoch 1/7
+2020-01-02 18:18:04.404795: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Epoch 1/7
+2020-01-02 18:18:04.412261: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Epoch 1/7
+2020-01-02 18:18:04.456214: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Epoch 1/7
+2020-01-02 18:18:04.484532: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64, score=0.4900874276566925, total=131.6min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256 
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64, score=0.46293103448275863, total=131.9min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128, score=0.5368796946188893, total=133.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128, score=0.4252463054187192, total=133.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+W0102 20:34:10.567032 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:20.271861 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:42.692686 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:42.885157 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:43.116991 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:43.419352 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:47.976262 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:48.159231 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:48.337937 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0102 20:34:48.530851 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256, score=0.4888560522103189, total=127.7min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128 
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256, score=0.48472906403940885, total=127.8min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128 
+Epoch 4/7
+Epoch 1/7
+Epoch 4/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128, score=0.4900874276566925, total=120.5min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128, score=0.47635467980295565, total=120.7min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5447604974756803, total=339.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5294334975369458, total=339.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+[Parallel(n_jobs=-1)]: Done  10 tasks      | elapsed: 486.5min
+Epoch 1/7
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.4929195911833518, total=118.7min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256 
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.4383004926108374, total=119.1min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+W0103 03:42:01.265009 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256, score=0.49279645363871444, total=47.9min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=64, batch_size=64 
+W0103 03:42:46.049844 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:42:46.180628 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:42:46.300909 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256, score=0.4919950738916256, total=48.4min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=64, batch_size=64 
+W0103 03:42:46.482063 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:42:51.463721 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:43:20.547713 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:43:20.611499 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:43:20.685356 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+W0103 03:43:20.747675 140736692810688 nn_ops.py:4224] Large dropout rate: 0.9 (>0.5). In TensorFlow 2.x, dropout() uses dropout rate instead of keep_prob. Please ensure that this is intended.
+Epoch 1/7
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.4854082009604728, total=110.9min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128 
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.4333743842364532, total=110.9min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128, score=0.49612116734392314, total=105.8min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128, score=0.44532019704433495, total=105.7min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=64, batch_size=64, score=0.543282846940032, total=328.3min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=64, batch_size=64, score=0.5294334975369458, total=328.2min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 6/7
+Epoch 6/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.4929195911833518, total=50.4min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.44519704433497537, total=51.0min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.5092364532019704, total=298.6min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.42950375569511146, total=299.1min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5437753971185815, total=64.2min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=128 
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5294334975369458, total=64.3min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.540204408324098, total=256.1min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64 
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=128, score=0.5063415835488241, total=254.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64 
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.47598522167487683, total=256.0min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=128, score=0.4206896551724138, total=253.8min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64, score=0.4315270935960591, total=119.0min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64, score=0.4939046915404507, total=120.3min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128, score=0.5437753971185815, total=52.7min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128, score=0.5294334975369458, total=54.1min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5437753971185815, total=295.1min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5294334975369458, total=295.6min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 4/7
+Epoch 2/7
+Epoch 4/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.4990764684152198, total=59.7min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64 
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.5275862068965518, total=60.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64, score=0.48762467676394533, total=328.5min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64, score=0.520935960591133, total=329.1min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64, score=0.4840536879694619, total=96.5min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64, score=0.42635467980295566, total=98.8min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64, score=0.530599679842384, total=365.0min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64, score=0.5338669950738916, total=364.3min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5437753971185815, total=299.0min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5294334975369458, total=299.4min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=128, score=0.49649057997783524, total=92.0min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=128, score=0.43448275862068964, total=91.9min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.5386699507389162, total=345.8min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256 
+[CV]  num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.4898411525674178, total=346.5min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 7/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5437753971185815, total=98.8min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 3/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5294334975369458, total=98.9min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 3/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128, score=0.4900874276566925, total=47.2min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128, score=0.4461822660098522, total=48.4min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256, score=0.4889791897549563, total=75.1min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256, score=0.5192118226600986, total=75.3min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.5143455239502525, total=91.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=64 
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.4724137931034483, total=91.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.4824528998891762, total=113.6min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.46317733990147786, total=114.5min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 4/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.49649057997783524, total=49.9min
+[CV] num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=64, score=0.4770348479251324, total=64.8min
+[CV] num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256 
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=64, score=0.44938423645320197, total=64.9min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.45332512315270934, total=50.8min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+[Parallel(n_jobs=-1)]: Done  64 tasks      | elapsed: 2630.0min
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+Epoch 2/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256, score=0.5437753971185815, total=41.1min
+[CV] num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+[CV]  num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256, score=0.5294334975369458, total=40.9min
+[CV] num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.4611501046669129, total=83.7min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.4517241379310345, total=84.3min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=64, score=0.49649057997783524, total=107.2min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=64, score=0.437192118226601, total=110.2min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5437753971185815, total=288.0min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5294334975369458, total=289.1min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.5437753971185815, total=92.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.5369458128078818, total=96.2min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64, score=0.47863563600541803, total=138.4min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 4/7
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=64, score=0.429064039408867, total=140.5min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 5/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.4956286171653737, total=114.6min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.42142857142857143, total=117.1min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 2/7
+Epoch 7/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.4957517547100111, total=368.8min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.45123152709359604, total=368.2min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.5133604235931536, total=95.7min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.4619458128078818, total=97.2min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 3/7
+Epoch 1/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 4/7
+Epoch 3/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 5/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.49501292944218694, total=86.5min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 6/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.4204433497536946, total=86.8min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.5437753971185815, total=112.0min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.5294334975369458, total=113.2min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 2/7
+Epoch 2/7
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 3/7
+Epoch 4/7
+Epoch 3/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.49612116734392314, total=107.8min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.5344827586206896, total=109.4min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 4/7
+Epoch 2/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64, score=0.501539219307967, total=51.8min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 6/7
+Epoch 1/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64, score=0.4395320197044335, total=51.3min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.4887329146656816, total=346.8min
+[CV] num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=64, score=0.44261083743842367, total=345.8min
+[CV] num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 7/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=128, score=0.4959980297992858, total=264.7min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 4/7
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=128, score=0.5320197044334976, total=263.6min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.5437753971185815, total=82.6min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=256 
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+Epoch 1/7
+Epoch 7/7
+Epoch 2/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.5294334975369458, total=84.9min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 4/7
+Epoch 7/7
+Epoch 2/7
+Epoch 7/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=256, score=0.49612116734392314, total=50.3min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 6/7
+Epoch 1/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=256, score=0.4814039408866995, total=48.1min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5448836350203177, total=274.5min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=256, score=0.5294334975369458, total=274.8min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 4/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.44612732422115503, total=99.2min
+[CV] num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=256 
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=64, score=0.5294334975369458, total=98.8min
+[CV] num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 4/7
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=128, score=0.49144194064770347, total=277.2min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=128, score=0.4375615763546798, total=280.6min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128, score=0.4898411525674178, total=82.9min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 7/7
+Epoch 1/7
+Epoch 7/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=128, score=0.4774630541871921, total=86.0min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=256, score=0.45147783251231527, total=293.4min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+[CV]  num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=128, batch_size=256, score=0.500184706316956, total=294.8min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 4/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.45622460288141853, total=118.1min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 5/7
+Epoch 5/7
+Epoch 7/7
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.5294334975369458, total=123.5min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 7/7
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.47044334975369456, total=104.5min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.49119566555842875, total=105.1min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 4/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.4855911330049261, total=92.3min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.46915404506834135, total=93.6min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.4850387883265608, total=124.5min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.42610837438423643, total=124.8min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5437753971185815, total=293.8min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64, score=0.4939046915404507, total=44.1min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 4/7
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64, score=0.4163793103448276, total=45.2min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5294334975369458, total=284.7min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 2/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=128, score=0.4994458810491319, total=41.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 5/7
+Epoch 4/7
+Epoch 4/7
+Epoch 1/7
+Epoch 6/7
+Epoch 5/7
+Epoch 5/7
+Epoch 7/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=128, score=0.4646551724137931, total=46.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 7/7
+Epoch 1/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.4440886699507389, total=56.7min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 2/7
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.47900504863933013, total=59.7min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 5/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 3/7
+Epoch 4/7
+Epoch 3/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=128, score=0.5437753971185815, total=66.8min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 6/7
+Epoch 1/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.5049870705578131, total=49.1min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=128, score=0.5294334975369458, total=65.2min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.437192118226601, total=49.3min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.4173645320197044, total=121.2min
+[CV] num_filters=64, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 4/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.49316586627262654, total=121.9min
+[CV] num_filters=64, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128, score=0.494027829085088, total=103.2min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128, score=0.4224137931034483, total=105.1min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.4907031153798793, total=43.1min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.43768472906403944, total=43.3min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5437753971185815, total=298.1min
+[CV] num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5294334975369458, total=296.6min
+[CV] num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 5/7
+Epoch 5/7
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128, score=0.4785124984607807, total=54.5min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=128, score=0.4379310344827586, total=54.6min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 4/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.5115133604235932, total=97.1min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=128, score=0.5131773399014778, total=98.5min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 5/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.5288757542174609, total=89.2min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.516871921182266, total=89.7min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128, score=0.4898411525674178, total=277.1min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128, score=0.5272167487684729, total=276.8min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 2/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128, score=0.4839305504248245, total=85.1min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 4/7
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=128, score=0.45529556650246306, total=86.2min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 3/7
+Epoch 5/7
+Epoch 2/7
+Epoch 4/7
+Epoch 2/7
+Epoch 6/7
+Epoch 5/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=256, score=0.5437753971185815, total=83.2min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=256, score=0.4517241379310345, total=81.5min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.48614702622829703, total=106.9min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 2/7
+Epoch 1/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.4184729064039409, total=108.2min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 4/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 7/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5437753971185815, total=136.7min
+[CV] num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5294334975369458, total=137.4min
+[CV] num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 7/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.49833764314739565, total=68.7min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.43177339901477835, total=70.1min
+[CV] num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64 
+[Parallel(n_jobs=-1)]: Done 154 tasks      | elapsed: 5882.3min
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=256, score=0.5042482452899889, total=281.9min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=256, score=0.4194581280788177, total=280.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64, score=0.493658416451176, total=55.1min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=64, score=0.4358374384236453, total=56.4min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 3/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=64, score=0.4945203792636375, total=55.2min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=64, score=0.45480295566502466, total=55.9min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.48848663957640687, total=94.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.46564039408867, total=94.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 6/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128, score=0.4957517547100111, total=95.6min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=128, score=0.4278325123152709, total=97.3min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.495382342076099, total=314.3min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 4/7
+Epoch 2/7
+Epoch 3/7
+Epoch 6/7
+Epoch 5/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.4286945812807882, total=316.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 4/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 2/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5437753971185815, total=75.4min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 5/7
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.5053564831917251, total=45.2min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 6/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=256, score=0.5294334975369458, total=74.1min
+[CV] num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 7/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.4419950738916256, total=43.7min
+[CV] num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64, score=0.5016623568526044, total=109.6min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64, score=0.4437192118226601, total=107.6min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 4/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.44532019704433495, total=42.8min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=64 
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.5028937322989779, total=44.4min
+[CV] num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.5044945203792637, total=289.5min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.46576354679802956, total=290.2min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64, score=0.495382342076099, total=93.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=64, score=0.4445812807881773, total=91.9min
+[CV] num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=64, score=0.5294334975369458, total=305.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+[CV]  num_filters=32, num_chars=8, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=64, score=0.5197635759142962, total=306.6min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.514222386405615, total=46.0min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=256, score=0.43423645320197046, total=47.7min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 6/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.4655830562738579, total=101.8min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 6/7
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.44482758620689655, total=102.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.4840536879694619, total=83.0min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=256, score=0.4413793103448276, total=83.6min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64, score=0.4437877108730452, total=308.9min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64, score=0.45738916256157636, total=306.5min
+[CV] num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 2/7
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128, score=0.4840536879694619, total=125.4min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=128, score=0.46108374384236456, total=126.1min
+[CV] num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256, score=0.5043713828346262, total=48.0min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256, score=0.4602216748768473, total=48.4min
+[CV] num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256, score=0.4941509666297254, total=62.1min
+[CV] num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=64, batch_size=256, score=0.454679802955665, total=63.7min
+[CV] num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+/Users/frandm/anaconda3/envs/untitled/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py:233: RuntimeWarning: invalid value encountered in greater
+  classes = (proba > 0.5).astype('int32')
+[CV]  num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5437753971185815, total=55.3min
+[CV] num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5294334975369458, total=54.9min
+[CV] num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64, score=0.4868858514961212, total=290.5min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64, score=0.5321428571428571, total=288.4min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.4873784016746706, total=55.8min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.1, dense=256, batch_size=64, score=0.4496305418719212, total=54.7min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 3/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 4/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.49119566555842875, total=93.2min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 5/7
+Epoch 1/7
+Epoch 5/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.4902709359605911, total=92.9min
+[CV] num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 6/7
+Epoch 6/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=128, score=0.5437753971185815, total=104.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=256, batch_size=128, score=0.5294334975369458, total=105.2min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64, score=0.45622460288141853, total=308.2min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.47925132372860485, total=50.0min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=64, score=0.47155172413793106, total=311.4min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=256, score=0.44445812807881774, total=47.6min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256, score=0.4872552641300332, total=95.4min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=128 
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=256, score=0.4915024630541872, total=94.8min
+[CV] num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=128, score=0.47937446127324224, total=142.1min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+[CV]  num_filters=128, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=64, batch_size=128, score=0.46527093596059116, total=142.2min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64, score=0.49427410417436274, total=292.3min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 6/7
+Epoch 6/7
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=64, score=0.4353448275862069, total=292.9min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.45647087797069325, total=86.6min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=128, batch_size=64, score=0.5294334975369458, total=87.2min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=256, score=0.47568033493412143, total=362.8min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=256, score=0.5301724137931034, total=362.0min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.4888560522103189, total=348.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 2/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.5, dense=64, batch_size=256, score=0.4471674876847291, total=348.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 4/7
+Epoch 4/7
+Epoch 6/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 5/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.5008003940401429, total=84.2min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=256, batch_size=256, score=0.4161330049261084, total=83.9min
+[CV] num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=128, score=0.5437753971185815, total=90.0min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.9, dense=64, batch_size=128, score=0.5294334975369458, total=90.1min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=128 
+Epoch 1/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5437753971185815, total=45.5min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+[CV]  num_filters=64, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=64, score=0.5294334975369458, total=44.9min
+[CV] num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=128, score=0.5067109961827361, total=67.1min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=256, batch_size=128, score=0.4350985221674877, total=67.6min
+[CV] num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 6/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 7/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.5394655830562739, total=42.0min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+[CV]  num_filters=32, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.44100985221674877, total=42.6min
+[CV] num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.4413793103448276, total=84.8min
+[CV] num_filters=32, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.46570619381849526, total=86.5min
+[CV] num_filters=32, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 2/7
+Epoch 7/7
+Epoch 2/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.4538849895333087, total=41.8min
+[CV] num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=4, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.46145320197044337, total=44.1min
+[CV] num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.4686614948897919, total=91.1min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=8, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.453448275862069, total=91.7min
+[CV] num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256 
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 6/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.48639330131757175, total=97.3min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=256, score=0.42093596059113303, total=98.0min
+[CV] num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5557197389484053, total=259.7min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=6, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=128, score=0.5312807881773399, total=260.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 7/7
+Epoch 3/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=128, batch_size=256, score=0.5437753971185815, total=51.8min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=128 
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.9, dense=128, batch_size=256, score=0.5294334975369458, total=51.6min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 1/7
+Epoch 4/7
+Epoch 4/7
+Epoch 2/7
+Epoch 2/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 4/7
+Epoch 7/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=128, score=0.4595493165866273, total=252.4min
+[CV] num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=128, batch_size=128, score=0.41995073891625617, total=254.1min
+[CV] num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 6/7
+Epoch 2/7
+Epoch 6/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256, score=0.5437753971185815, total=73.3min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=128, dropout_rate=0.9, dense=256, batch_size=256, score=0.5376847290640394, total=74.1min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=128, score=0.5437753971185815, total=281.0min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=128, batch_size=128, score=0.5294334975369458, total=281.7min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 4/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64, score=0.4926733160940771, total=87.8min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=128 
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.5, dense=64, batch_size=64, score=0.4471674876847291, total=87.7min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 4/7
+Epoch 1/7
+Epoch 5/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 6/7
+Epoch 3/7
+Epoch 6/7
+Epoch 3/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128, score=0.4929195911833518, total=297.2min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=128, score=0.4921182266009852, total=296.5min
+[CV] num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 2/7
+Epoch 7/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=128, score=0.4870089890407585, total=280.9min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.1, dense=64, batch_size=128, score=0.44285714285714284, total=282.9min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 4/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128, score=0.5437753971185815, total=80.0min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.9, dense=64, batch_size=128, score=0.5294334975369458, total=81.3min
+[CV] num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 6/7
+Epoch 6/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 7/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.4836842753355498, total=103.6min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.42561576354679803, total=103.3min
+[CV] num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5437753971185815, total=300.9min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+[CV]  num_filters=128, num_chars=4, hidden_layer=512, dropout_rate=0.9, dense=256, batch_size=256, score=0.5294334975369458, total=301.7min
+[CV] num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64 
+Epoch 2/7
+Epoch 1/7
+Epoch 3/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 6/7
+Epoch 7/7
+Epoch 4/7
+Epoch 7/7
+Epoch 5/7
+Epoch 5/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256, score=0.47715798546976973, total=82.0min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 6/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=256, score=0.44236453201970444, total=83.5min
+[CV] num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128 
+Epoch 1/7
+Epoch 6/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
+Epoch 7/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.5024011821204285, total=108.4min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=256, dropout_rate=0.5, dense=128, batch_size=64, score=0.4119458128078818, total=108.6min
+[CV] num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 5/7
+Epoch 1/7
+Epoch 5/7
+Epoch 6/7
+Epoch 2/7
+Epoch 6/7
+Epoch 2/7
+Epoch 7/7
+Epoch 3/7
+Epoch 7/7
+Epoch 3/7
+Epoch 4/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.49316586627262654, total=76.0min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=128, score=0.4266009852216749, total=76.1min
+[CV] num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 4/7
+Epoch 5/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 5/7
+Epoch 3/7
+Epoch 6/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 6/7
+Epoch 5/7
+Epoch 6/7
+Epoch 7/7
+Epoch 6/7
+Epoch 7/7
+Epoch 7/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256, score=0.4887329146656816, total=48.4min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=4, hidden_layer=128, dropout_rate=0.1, dense=128, batch_size=256, score=0.41995073891625617, total=48.4min
+[CV] num_filters=128, num_chars=12, hidden_layer=512, dropout_rate=0.1, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64, score=0.48639330131757175, total=94.7min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=6, hidden_layer=256, dropout_rate=0.1, dense=256, batch_size=64, score=0.4555418719211823, total=93.3min
+[CV] num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128 
+Epoch 1/7
+Epoch 2/7
+Epoch 3/7
+Epoch 2/7
+Epoch 4/7
+Epoch 3/7
+Epoch 5/7
+Epoch 4/7
+Epoch 6/7
+Epoch 5/7
+Epoch 2/7
+Epoch 7/7
+Epoch 2/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.490579977835242, total=54.3min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=64, num_chars=12, hidden_layer=128, dropout_rate=0.5, dense=128, batch_size=128, score=0.42721674876847293, total=56.3min
+[CV] num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 4/7
+Epoch 4/7
+Epoch 7/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64, score=0.4916882157369782, total=81.8min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+[CV]  num_filters=128, num_chars=8, hidden_layer=128, dropout_rate=0.5, dense=64, batch_size=64, score=0.45960591133004924, total=82.5min
+[CV] num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256 
+Epoch 1/7
+Epoch 2/7
+Epoch 2/7
+Epoch 3/7
+Epoch 5/7
+Epoch 5/7
+Epoch 3/7
+Epoch 4/7
+Epoch 4/7
+Epoch 5/7
+Epoch 5/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+Epoch 6/7
+Epoch 6/7
+Epoch 7/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.4966137175224726, total=95.5min
+[CV] num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+[CV]  num_filters=32, num_chars=12, hidden_layer=256, dropout_rate=0.1, dense=128, batch_size=256, score=0.41502463054187194, total=96.3min
+[CV] num_filters=64, num_chars=12, hidden_layer=512, dropout_rate=0.5, dense=256, batch_size=64 
+Epoch 1/7
+Epoch 7/7
+Epoch 7/7
+Epoch 2/7
+Epoch 2/7
